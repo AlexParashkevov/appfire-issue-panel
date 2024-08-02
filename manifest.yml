@@ -1,0 +1,25 @@
+modules:
+  jira:issuePanel:
+    - key: appfire-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: appfire
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs18.x
+  id: ari:cloud:ecosystem::app/c69d627f-a19b-4deb-b0f5-88094b19b1c3
+permissions:
+  scopes:
+    - read:jira-work
+    - write:jira-work
+    - read:jira-user
+
